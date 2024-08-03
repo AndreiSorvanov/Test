@@ -14,8 +14,36 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  function onTelegramAuth(user: {
+    first_name: string;
+    last_name: string;
+    username: string;
+    id: string;
+  }) {
+    console.log(
+      "Logged in as " +
+        user.first_name +
+        " " +
+        user.last_name +
+        " (" +
+        user.id +
+        (user.username ? ", @" + user.username : "") +
+        ")"
+    );
+  }
+
   return (
     <html lang="en">
+      <head>
+        <script
+          async
+          src="https://telegram.org/js/telegram-widget.js?22"
+          data-telegram-login="qwqwqwqwqwqwqwqwqwqwqbot"
+          data-size="large"
+          data-onauth="onTelegramAuth(user)"
+          data-request-access="write"
+        ></script>
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
