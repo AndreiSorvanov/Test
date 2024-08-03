@@ -15,24 +15,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  function onTelegramAuth(user: {
-    first_name: string;
-    last_name: string;
-    username: string;
-    id: string;
-  }) {
-    console.log(
-      "Logged in as " +
-        user.first_name +
-        " " +
-        user.last_name +
-        " (" +
-        user.id +
-        (user.username ? ", @" + user.username : "") +
-        ")"
-    );
-  }
-
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
