@@ -35,16 +35,6 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head>
-        <Script
-          async
-          src="https://telegram.org/js/telegram-widget.js?22"
-          data-telegram-login="qwqwqwqwqwqwqwqwqwqwqbot"
-          data-size="large"
-          data-onauth="onTelegramAuth(user)"
-          data-request-access="write"
-        ></Script>
-      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
